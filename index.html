@@ -7,6 +7,12 @@
   <link rel="stylesheet" href="assets/style.css">
   <script src="https://kit.fontawesome.com/4b7e65eb9f.js" crossorigin="anonymous"></script>
 <style>
+  /* ===== COULEURS PRINCIPALES =====
+     Violet principal : #6a1db0
+     Violet hover : #4f167f
+     Ombre violette RGBA : rgba(106,29,176,0.4)
+  */
+
   /* ===== BODY ===== */
   body {
     background: #0d0017;
@@ -21,7 +27,7 @@
 
   /* ===== HEADER ===== */
   header {
-    background: #e63900;
+    background: #6a1db0;
     padding: 15px 30px;
     display: flex;
     align-items: center;
@@ -52,7 +58,7 @@
   }
 
   nav ul li a:hover, nav ul li a.active {
-    color: #e63900;
+    color: #6a1db0;
   }
 
   /* ===== SEARCH BAR + ACCOUNT BUTTON ===== */
@@ -93,7 +99,7 @@
 
   .account-btn {
     padding: 10px 16px;
-    background: #e63900;
+    background: #6a1db0;
     color: white;
     border-radius: 8px;
     text-decoration: none;
@@ -104,7 +110,7 @@
     transition: 0.3s;
   }
 
-  .account-btn:hover { background: #cc2f00; }
+  .account-btn:hover { background: #4f167f; }
 
   /* ===== MAIN LAYOUT ===== */
   main {
@@ -135,11 +141,11 @@
   }
 
   .recent-item:hover {
-    border-color: #e63900;
+    border-color: #6a1db0;
     background: #1a1a1a;
   }
 
-  .recent-item h3 { font-size: 15px; margin: 0 0 5px; color: #e63900; }
+  .recent-item h3 { font-size: 15px; margin: 0 0 5px; color: #6a1db0; }
   .recent-item p { margin: 0; font-size: 13px; color: #aaa; }
   .recent-item a { display: block; text-decoration: none; color: inherit; }
 
@@ -175,7 +181,7 @@
     background: #0e0e0e;
     color: #fff;
     border-radius: 15px;
-    border: 2px solid #e63900;
+    border: 2px solid #6a1db0;
     padding: 20px;
     text-align: center;
     transition: transform 0.2s ease, box-shadow 0.2s ease, border 0.3s;
@@ -183,12 +189,12 @@
 
   .card:hover {
     transform: scale(1.05);
-    box-shadow: 0 0 20px rgba(230, 57, 0, 0.4);
+    box-shadow: 0 0 20px rgba(106,29,176,0.4);
   }
 
   .card-img { width: 100px; height: 100px; object-fit: contain; margin-bottom: 15px; }
-  .card h3 { color: #e63900; }
-  .card a { display: inline-block; margin-top: 10px; color: #e63900; font-weight: bold; }
+  .card h3 { color: #6a1db0; }
+  .card a { display: inline-block; margin-top: 10px; color: #6a1db0; font-weight: bold; }
 
   /* ===== ACTIONS ===== */
   .actions {
@@ -208,7 +214,7 @@
     width: 100%;
     background: none;
     border: none;
-    color: #e63900;
+    color: #6a1db0;
     font-size: 15px;
     padding: 8px 0;
     text-align: left;
@@ -221,7 +227,7 @@
   /* ===== MODE CLAIR ===== */
   body.light-mode { background: #f5f5f5; color: #000; }
   body.light-mode .recent, body.light-mode .cards-wrapper, body.light-mode .actions { background: #ddd; }
-  body.light-mode .card, body.light-mode .recent-item { background: #fff; color: #000; border: 2px solid #e63900; }
+  body.light-mode .card, body.light-mode .recent-item { background: #fff; color: #000; border: 2px solid #6a1db0; }
 
   /* ===== MODAL COMPTE ===== */
   .modal {
@@ -258,7 +264,7 @@
     transition: 0.2s;
   }
 
-  .closeBtn:hover { color: #e63900; }
+  .closeBtn:hover { color: #6a1db0; }
 
   .modal-content input {
     width: 100%;
@@ -275,7 +281,7 @@
   .modal-content button {
     width: 100%;
     padding: 12px;
-    background: #e63900;
+    background: #6a1db0;
     color: #fff;
     border: none;
     border-radius: 8px;
@@ -284,14 +290,14 @@
     transition: 0.3s;
   }
 
-  .modal-content button:hover { background: #cc2f00; }
+  .modal-content button:hover { background: #4f167f; }
   .modal-content p { font-size: 14px; color: #ccc; margin-top: 15px; }
-  .modal-content p a { color: #e63900; text-decoration: none; }
+  .modal-content p a { color: #6a1db0; text-decoration: none; }
   .modal-content p a:hover { text-decoration: underline; }
 
   @media (max-width:1100px){
     main{ grid-template-columns: 1fr; margin: 18px; }
-    .search-bar input { width: 90%; }
+    .search-bar input { width: 90%; margin-left: 0; }
     .search-container { flex-direction: column; gap: 10px; }
   }
 </style>
@@ -414,8 +420,6 @@
     });
   }
   loadCards();
-
-  const cards = document.querySelectorAll(".card");
 
   // ===== RECHERCHE =====
   searchInput.addEventListener("input", () => {
